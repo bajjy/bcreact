@@ -1,0 +1,22 @@
+{
+  "ts-node": {
+    "files": true
+  },
+  "compilerOptions": {
+    "lib": ["DOM"],
+    "module": "commonjs",
+    "baseUrl": ".",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "ignoreDeprecations": "5.0",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+  },
+  "extends": "@tsconfig/node-lts-strictest-esm/tsconfig.json",
+  "exclude": ["node_modules"],
+  "include": [
+    "./src/**/*.tsx",
+    "./src/**/*.ts",
+    "./src/**/*.d.ts"
+  ]
+}

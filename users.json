@@ -1,0 +1,14 @@
+{
+  "active": [
+    {
+      "id": 0,
+      "email": "kostiantyn.dobrovolskyi@dataart.com",
+      "password": "aaaa_Ab1"
+    },
+    {
+      "id": 1,
+      "email": "admin@dataart.com",
+      "password": "admin_Ab1"
+    }
+  ]
+}
