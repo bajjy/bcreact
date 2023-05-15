@@ -14,6 +14,11 @@ function App() {
     setUser(userInfo);
     userInfo && localStorage.setItem('x-access-token', userInfo.token)
   }
+  const [cart, setCart] = useState<any | null>();
+  const setCartInfo = (cartInfo:  any | null) => {
+    !cartInfo && setUser(null);
+    setCart(cartInfo);
+  }
 
   useEffect(() => {
     console.log(user)
@@ -25,10 +30,22 @@ function App() {
         setUser={(u) => setUserInfo(u)}
       />}
       
-      {user && <Products
+      {!cart && user && <Products
+        cart={setCartInfo}
         user={user}
       />}
       
+      {cart && <div className="cart">
+        {cart && cart.response.data.line_items.physical_items.map((prod: any) => {
+          return <div className="prod-cart" key={prod.sku}>
+            <img src={prod.image_url} alt={prod.name} />
+            {prod.name}
+            price: {prod.original_price}
+          </div>
+        })}
+      </div>
+
+      }
     </div>
   );
 }
